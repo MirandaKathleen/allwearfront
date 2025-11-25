@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desfiles de Moda</title>
+    <style>
+        /* --- ESTILOS CSS --- */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #eee5d9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden; /* Garante que apenas as imagens visíveis apareçam */
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out; /* Suaviza a transição das imagens */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .card {
+            flex: 0 0 25%; /* Cada card ocupa 25% da largura, mostrando 4 por vez */
+            padding: 0 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 630px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-caption {
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        /* Setas de navegação */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.65);
+            border: none;
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 1000; /* Garante que a seta fique sobre as imagens */
+            padding: 0;
+            user-select: none;
+            opacity: 0.95;
+            transition: transform 0.12s ease, opacity 0.12s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+
+        .nav-arrow:active {
+            transform: translateY(-50%) scale(0.96);
+        }
+
+        .nav-arrow:hover {
+            opacity: 1;
+        }
+
+        .arrow-left {
+            left: 8px; /* fica dentro do carrossel */
+        }
+
+        .arrow-right {
+            right: 8px; /* fica dentro do carrossel */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>EVENTOS</h1>
+        </div>
+
+        <div class="carousel-wrapper">
+            <button class="nav-arrow arrow-left" id="prevBtn">&leftarrow;</button>
+            <ul class="carousel-track" id="carouselTrack">
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/736x/4c/6a/d3/4c6ad3cd5497308fc25cfa1ad0f7878f.jpg" alt="Francesca, Inverno 2026">
+                        <p class="card-caption">FRANCESCA, INVERNO 2026</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/1200x/58/3e/b3/583eb32fdf35f3a56e54309537e7e700.jpg" alt="Lino Villaventura, Verão 2026">
+                        <p class="card-caption">SPFW N60: LINO VILLAVENTURA, VERÃO 2026</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/736x/46/a6/47/46a6472a20edebc361038a8854df0918.jpg" alt="Martins">
+                        <p class="card-caption">SPFW N60: MARTINS</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/736x/09/7f/9d/097f9de78a5776dd3eeea1970260b1c6.jpg" alt="Apartamento 03">
+                        <p class="card-caption">SPFW N60: APARTAMENTO 03</p>
+                    </div>
+                </li>
+
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/736x/e4/42/69/e4426996562034e3e2328266774f44e3.jpg" alt="Exemplo 5">
+                        <p class="card-caption">MARCA ALPHA, OUTONO 2026</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/736x/de/d6/0b/ded60b98c76f4daeac5cbd6b4ca6bb1f.jpg" alt="Exemplo 6">
+                        <p class="card-caption">DESIGNER BETA, VERÃO 2027</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/1200x/d0/89/81/d089811c08b0a29011c18a0c23390bf3.jpg" alt="Exemplo 7">
+                        <p class="card-caption">COLEÇÃO GAMA, INVERNO 2027</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/1200x/77/c6/d9/77c6d9c4ebd469eaadca24c516d73c13.jpg" alt="Exemplo 8">
+                        <p class="card-caption">ESTÚDIO DELTA, EDIÇÃO ESPECIAL</p>
+                    </div>
+                </li>
+               
+            </ul>
+            <button class="nav-arrow arrow-right" id="nextBtn">&rightarrow;</button>
+        </div>
+    </div>
+
+    <script>
+        /* --- JAVASCRIPT --- */
+
+        const track = document.getElementById('carouselTrack');
+        const cards = Array.from(track.children);
+        const nextButton = document.getElementById('nextBtn');
+        const prevButton = document.getElementById('prevBtn');
+        
+        // Número de cards visíveis por vez
+        const cardsPerView = 4; 
+        
+        // Largura de um card (25% da largura do track)
+        const cardWidth = 100 / cardsPerView; 
+        
+        // Índice do primeiro card visível (0, 4, 8, etc.)
+        let currentIndex = 0;
+
+        // Número máximo de movimentos que o carrossel pode fazer para a direita
+        // É o total de cards menos os que ficam visíveis
+        const maxIndex = cards.length - cardsPerView;
+
+        // Função para atualizar a posição do carrossel
+        function updateCarousel() {
+            // Calcula o deslocamento horizontal (em porcentagem)
+            const offset = -currentIndex * cardWidth;
+            track.style.transform = `translateX(${offset}%)`;
+            
+            // Lógica para desabilitar/habilitar botões
+            prevButton.disabled = currentIndex === 0;
+            nextButton.disabled = currentIndex >= maxIndex;
+        }
+
+        // Evento para a seta da direita
+        nextButton.addEventListener('click', () => {
+            // Avança 4 cards, ou o que faltar para chegar ao final
+            if (currentIndex < maxIndex) {
+                currentIndex += cardsPerView;
+                // Garante que o índice não passe do máximo
+                if (currentIndex > maxIndex) {
+                    currentIndex = maxIndex;
+                }
+                updateCarousel();
+            }
+        });
+
+        // Evento para a seta da esquerda
+        prevButton.addEventListener('click', () => {
+            // Retorna 4 cards, ou o que for para chegar ao início
+            if (currentIndex > 0) {
+                currentIndex -= cardsPerView;
+                // Garante que o índice não seja negativo
+                if (currentIndex < 0) {
+                    currentIndex = 0;
+                }
+                updateCarousel();
+            }
+        });
+
+        // Inicializa o carrossel na posição 0
+        updateCarousel(); 
+    </script>
+
+</body>
+</html>

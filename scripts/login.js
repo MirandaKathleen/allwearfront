@@ -8,7 +8,7 @@ const form = document.getElementById("loginForm");
       const senha = document.getElementById("senha").value;
 
       try {
-        const response = await fetch("http://localhost:3000/login", {
+        const response = await fetch("https://allwearback00.vercel.app/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

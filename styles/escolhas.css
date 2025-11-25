@@ -1,112 +1,78 @@
-body {
-    font-family: sans-serif;
-    background: #f8f8f8; /* Fundo de cor lisa */
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Alinha o conteúdo ao topo */
-    align-items: center;
-    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
-    margin: 0;
-  }
-  
-  .header-border {
-    width: 100%;
-    background-color: #d4af37; /* Cor dourada da borda superior */
-    padding: 15px 0;
-    text-align: center;
-    margin-bottom: 20px; /* Espaço entre a borda e o carrossel */
-    box-shadow: 0 2px 5px rgba(233, 201, 115, 0.2); /* Sombra sutil para destacar a borda */
-  }
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #eee5d9;
+      margin: 0;
+      padding: 0;
+      color: #1a1a1a;
+      text-align: center;
+    }
 
-  .header-border h1 {
-    color: #333;
-    margin: 0;
-    font-size: 1.8em;
-  }
+    .main-header {
+      width: 100%;
+      padding: 20px 40px;
+      background-color: #000;
+      background: linear-gradient(to right, #000, #d2b68a);
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      box-sizing: border-box;
+    }
 
-  .slider {
-    position: relative;
-    width: 600px;
-    height: 300px;
-    overflow: hidden;
-    border: 2px solid #333;
-    background-color: #fff;
-  }
-  
-  .slide {
-    display: none;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .slide.active {
-    display: flex;
-  }
-  
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 10;
-    transition: background-color 0.3s ease; /* Transição suave para o efeito de piscar */
-    border-radius: 5px; /* Bordas arredondadas para os botões */
-  }
-  
-  .prev {
-    left: 10px;
-  }
-  
-  .next {
-    right: 10px;
-  }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
 
-  .flash-pink {
-    background-color: #ff69b4 !important; /* Rosa choque */
-    animation: flash 0.3s ease-in-out; /* Animação de piscar */
-  }
-  
-  @keyframes flash {
-    0% { background-color: #ff69b4; }
-    50% { background-color: #333; }
-    100% { background-color: #ff69b4; }
-  }
-  .header-border {
-  width: 100%;
-  background: linear-gradient(to right, #000000, #4e2e1e); /* Degradê preto para marrom */
-  padding: 15px 0;
-  text-align: center;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-.prev, .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #333;
-  color: white;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 5px;
-  transition: box-shadow 0.3s ease, background-color 0.3s ease;
-}
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
 
-.prev:active, .next:active {
-  box-shadow: 0 0 12px 4px #8b4513; /* brilho marrom */
-  background-color: #5c3a21;
-}
+    .nav-links a:hover {
+      color: #ccc;
+    }
 
+    .image-option {
+      width: 150px;
+      height: 200px;
+      object-fit: cover;
+      margin: 10px;
+      border: 3px solid transparent;
+      cursor: pointer;
+    }
+
+    .image-option.selected {
+      border-color: #5e4e27ef;
+    }
+
+    .image-option.selected:hover {
+      transform: translateY(-5px);
+      animation: brilho 1s infinite alternate;
+    }
+
+
+    #goToSlider {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+
+      @keyframes brilho {
+        0% {
+          box-shadow: 0 0 5px #007bff, 0 0 10px #007bff, 0 0 15px #007bff;
+        }
+
+        100% {
+          box-shadow: 0 0 20px #007bff, 0 0 30px #007bff, 0 0 40px #007bff;
+        }
+
+      }
+
+    }

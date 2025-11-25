@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desfiles de Moda</title>
+    <style>
+        /* --- ESTILOS CSS --- */
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #eee5d9;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 40px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden; /* Garante que apenas as imagens visíveis apareçam */
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out; /* Suaviza a transição das imagens */
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .card {
+            flex: 0 0 25%; /* Cada card ocupa 25% da largura, mostrando 4 por vez */
+            padding: 0 10px;
+            box-sizing: border-box;
+            text-align: left;
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 630px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-caption {
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        /* Setas de navegação */
+        .nav-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.65);
+            border: none;
+            color: #fff;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 20px;
+            z-index: 1000; /* Garante que a seta fique sobre as imagens */
+            padding: 0;
+            user-select: none;
+            opacity: 0.95;
+            transition: transform 0.12s ease, opacity 0.12s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        }
+
+        .nav-arrow:active {
+            transform: translateY(-50%) scale(0.96);
+        }
+
+        .nav-arrow:hover {
+            opacity: 1;
+        }
+
+        .arrow-left {
+            left: 8px; /* fica dentro do carrossel */
+        }
+
+        .arrow-right {
+            right: 8px; /* fica dentro do carrossel */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>FORMAIS</h1>
+        </div>
+
+        <div class="carousel-wrapper">
+            <button class="nav-arrow arrow-left" id="prevBtn">&leftarrow;</button>
+            <ul class="carousel-track" id="carouselTrack">
+
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/736x/5c/e2/34/5ce234e3c87a7d29250f6da2bc88f0a0.jpg" alt="Exemplo 5">
+                        <p class="card-caption">MARCA ALPHA, OUTONO 2026</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/1200x/ac/a9/43/aca943f74d26bf7e2a000f0b5ac3c0d1.jpg" alt="Exemplo 6">
+                        <p class="card-caption">DESIGNER BETA, VERÃO 2027</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/1200x/85/19/6f/85196f2fd37a4f7d94bbf9de1728e76e.jpg" alt="Exemplo 7">
+                        <p class="card-caption">COLEÇÃO GAMA, INVERNO 2027</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/736x/d1/f1/d4/d1f1d4a1817c5c386c2d5de7588301dc.jpg" alt="Exemplo 8">
+                        <p class="card-caption">ESTÚDIO DELTA, EDIÇÃO ESPECIAL</p>
+                    </div>
+                </li>
+                
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/736x/8e/a2/55/8ea2550a2f9d6fccc73063453d4adaba.jpg" alt="Exemplo 9">
+                        <p class="card-caption">EXTRA 01, 2028</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/1200x/dd/0d/ba/dd0dba740d45d32a8c5ce30051335cc8.jpg" alt="Exemplo 10">
+                        <p class="card-caption">EXTRA 02, 2028</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/736x/fd/17/15/fd17153cee73df8c9668653a11cf0839.jpg" alt="Exemplo 11">
+                        <p class="card-caption">EXTRA 03, 2028</p>
+                    </div>
+                </li>
+                <li class="card">
+                    <div class="card-content">
+                        <img src="https://i.pinimg.com/736x/00/a8/97/00a8978c5eaa15ab733b1266321043e0.jpg" alt="Exemplo 12">
+                        <p class="card-caption">EXTRA 04, 2028</p>
+                    </div>
+                </li>
+            </ul>
+            <button class="nav-arrow arrow-right" id="nextBtn">&rightarrow;</button>
+        </div>
+    </div>
+
+    <script>
+        /* --- JAVASCRIPT --- */
+
+        const track = document.getElementById('carouselTrack');
+        const cards = Array.from(track.children);
+        const nextButton = document.getElementById('nextBtn');
+        const prevButton = document.getElementById('prevBtn');
+        
+        // Número de cards visíveis por vez
+        const cardsPerView = 4; 
+        
+        // Largura de um card (25% da largura do track)
+        const cardWidth = 100 / cardsPerView; 
+        
+        // Índice do primeiro card visível (0, 4, 8, etc.)
+        let currentIndex = 0;
+
+        // Número máximo de movimentos que o carrossel pode fazer para a direita
+        // É o total de cards menos os que ficam visíveis
+        const maxIndex = cards.length - cardsPerView;
+
+        // Função para atualizar a posição do carrossel
+        function updateCarousel() {
+            // Calcula o deslocamento horizontal (em porcentagem)
+            const offset = -currentIndex * cardWidth;
+            track.style.transform = `translateX(${offset}%)`;
+            
+            // Lógica para desabilitar/habilitar botões
+            prevButton.disabled = currentIndex === 0;
+            nextButton.disabled = currentIndex >= maxIndex;
+        }
+
+        // Evento para a seta da direita
+        nextButton.addEventListener('click', () => {
+            // Avança 4 cards, ou o que faltar para chegar ao final
+            if (currentIndex < maxIndex) {
+                currentIndex += cardsPerView;
+                // Garante que o índice não passe do máximo
+                if (currentIndex > maxIndex) {
+                    currentIndex = maxIndex;
+                }
+                updateCarousel();
+            }
+        });
+
+        // Evento para a seta da esquerda
+        prevButton.addEventListener('click', () => {
+            // Retorna 4 cards, ou o que for para chegar ao início
+            if (currentIndex > 0) {
+                currentIndex -= cardsPerView;
+                // Garante que o índice não seja negativo
+                if (currentIndex < 0) {
+                    currentIndex = 0;
+                }
+                updateCarousel();
+            }
+        });
+
+        // Inicializa o carrossel na posição 0
+        updateCarousel(); 
+    </script>
+
+</body>
+</html>

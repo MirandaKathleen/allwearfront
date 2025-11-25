@@ -42,10 +42,11 @@ img{
 
 .item{
     width: 600px;
-    height: 650px;
+    height: 800px;
     overflow: hidden;
     position: relative;
     transition: 1s;
+    border-radius: 10%;
 }
 p{
     font-size: 40px;
