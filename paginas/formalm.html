@@ -185,15 +185,13 @@
       window.location.href = 'slider.html';
     });
 
-    // ...existing code...
 document.getElementById('goToSlider').addEventListener('click', () => {
   if (selectedImages.length === 0) {
     alert('Selecione pelo menos uma imagem!');
     return;
   }
   localStorage.setItem('userImages', JSON.stringify(selectedImages));
-  window.location.href = 'escolha.html'; // Alterado para escolha.html
+  window.location.href = 'escolha.html'; 
 });
-// ...existing code... 
 
   </script>

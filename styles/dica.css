@@ -12,7 +12,6 @@ body {
   line-height: 1.7;
 }
 
-/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -48,14 +47,13 @@ body {
   color: #4b2c15;
 }
 
-/* Hero */
 .hero {
   background: url("https://i.pinimg.com/736x/48/9e/f5/489ef586b7d0b54fdfc0edca7b6f0b62.jpg") no-repeat center/cover;
   height: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 70px; /* espaço por causa da navbar fixa */
+  margin-top: 70px;
   color: #4b2c15;
   text-align: center;
 }
@@ -70,7 +68,6 @@ body {
   font-weight: 300;
 }
 
-/* Main (cards) */
 main {
   max-width: 1200px;
   margin: 50px auto;
@@ -114,7 +111,6 @@ main {
   font-size: 1rem;
 }
 
-/* Footer */
 footer {
   background: #e8d9c8;
   text-align: center;

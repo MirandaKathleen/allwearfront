@@ -155,7 +155,6 @@
   <div class="image-container">
     <img src="https://i.pinimg.com/736x/3f/6c/69/3f6c69c1c12a6be99017be9fa7250e6f.jpg" class="image-option">
   </div>
-  <!-- Repita para as outras imagens -->
 </div>
 
   <button id="goToSlider">Ver no carrossel</button>
@@ -186,15 +185,13 @@
       window.location.href = 'slider.html';
     });
 
-    // ...existing code...
 document.getElementById('goToSlider').addEventListener('click', () => {
   if (selectedImages.length === 0) {
     alert('Selecione pelo menos uma imagem!');
     return;
   }
   localStorage.setItem('userImages', JSON.stringify(selectedImages));
-  window.location.href = 'escolha.html'; // Alterado para escolha.html
+  window.location.href = 'escolha.html'; 
 });
-// ...existing code... 
 
   </script>

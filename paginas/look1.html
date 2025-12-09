@@ -13,8 +13,6 @@
 </header>
 <br><br><br><br>
     <style>
-        /* --- ESTILOS CSS --- */
-
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -72,19 +70,19 @@
 
         .carousel-wrapper {
             position: relative;
-            overflow: hidden; /* Garante que apenas as imagens visíveis apareçam */
+            overflow: hidden;
         }
 
         .carousel-track {
             display: flex;
-            transition: transform 0.5s ease-in-out; /* Suaviza a transição das imagens */
+            transition: transform 0.5s ease-in-out; 
             list-style: none;
             padding: 0;
             margin: 0;
         }
 
         .card {
-            flex: 0 0 25%; /* Cada card ocupa 25% da largura, mostrando 4 por vez */
+            flex: 0 0 25%; 
             padding: 0 10px;
             box-sizing: border-box;
             text-align: left;
@@ -112,7 +110,6 @@
             line-height: 1.4;
         }
 
-        /* Setas de navegação */
         .nav-arrow {
             position: absolute;
             top: 50%;
@@ -128,7 +125,7 @@
             justify-content: center;
             cursor: pointer;
             font-size: 20px;
-            z-index: 1000; /* Garante que a seta fique sobre as imagens */
+            z-index: 1000; 
             padding: 0;
             user-select: none;
             opacity: 0.95;
@@ -145,11 +142,11 @@
         }
 
         .arrow-left {
-            left: 8px; /* fica dentro do carrossel */
+            left: 8px; 
         }
 
         .arrow-right {
-            right: 8px; /* fica dentro do carrossel */
+            right: 8px; 
         }
     </style>
 </head>
@@ -219,43 +216,31 @@
     </div>
 
     <script>
-        /* --- JAVASCRIPT --- */
 
         const track = document.getElementById('carouselTrack');
         const cards = Array.from(track.children);
         const nextButton = document.getElementById('nextBtn');
         const prevButton = document.getElementById('prevBtn');
         
-        // Número de cards visíveis por vez
         const cardsPerView = 4; 
         
-        // Largura de um card (25% da largura do track)
         const cardWidth = 100 / cardsPerView; 
         
-        // Índice do primeiro card visível (0, 4, 8, etc.)
         let currentIndex = 0;
 
-        // Número máximo de movimentos que o carrossel pode fazer para a direita
-        // É o total de cards menos os que ficam visíveis
         const maxIndex = cards.length - cardsPerView;
 
-        // Função para atualizar a posição do carrossel
         function updateCarousel() {
-            // Calcula o deslocamento horizontal (em porcentagem)
             const offset = -currentIndex * cardWidth;
             track.style.transform = `translateX(${offset}%)`;
             
-            // Lógica para desabilitar/habilitar botões
             prevButton.disabled = currentIndex === 0;
             nextButton.disabled = currentIndex >= maxIndex;
         }
 
-        // Evento para a seta da direita
         nextButton.addEventListener('click', () => {
-            // Avança 4 cards, ou o que faltar para chegar ao final
             if (currentIndex < maxIndex) {
                 currentIndex += cardsPerView;
-                // Garante que o índice não passe do máximo
                 if (currentIndex > maxIndex) {
                     currentIndex = maxIndex;
                 }
@@ -263,12 +248,9 @@
             }
         });
 
-        // Evento para a seta da esquerda
         prevButton.addEventListener('click', () => {
-            // Retorna 4 cards, ou o que for para chegar ao início
             if (currentIndex > 0) {
                 currentIndex -= cardsPerView;
-                // Garante que o índice não seja negativo
                 if (currentIndex < 0) {
                     currentIndex = 0;
                 }
@@ -276,7 +258,6 @@
             }
         });
 
-        // Inicializa o carrossel na posição 0
         updateCarousel(); 
     </script>
 

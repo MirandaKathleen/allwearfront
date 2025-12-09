@@ -8,7 +8,6 @@
 </head>
 <body>
 
-  <!-- Header -->
   <header>
     <div class="banner">
       <img src="../assets/feminino.jpg" alt="Imagem 1">
@@ -47,11 +46,9 @@
     </div>
   </section>
 
-   <!-- ===== GALERIA DE INSPIRAÇÕES ===== -->
 <section class="galeria">
   <p>GALERIA DE INSPIRAÇÕES</p>
   <div class="galeria-grid">
-    <!-- Cada imagem agora é um link para uma página local. Ajuste os hrefs conforme desejar. -->
     <a href="look1.html">
       <img src="https://i.pinimg.com/1200x/f1/15/41/f115412392bdf1e238f1a0e53aeacb71.jpg" alt="Look 1">
     </a>
@@ -69,7 +66,6 @@
 
   <style>
 
-/* ===== GALERIA ===== */
 .galeria {
   text-align: center;
   margin: 60px auto;
@@ -90,9 +86,7 @@
 }
 .galeria-grid img {
   width: 140%;
-  /* altura fixa para todas as miniaturas - ajustável */
   height: 530px;
-  /* garante que a imagem preencha o contêiner sem distorcer */
   object-fit: cover;
   display: block;
   border-radius: 15px;
@@ -107,9 +101,8 @@
   <br>
 
   <style>
-    /* bloco de convite com mesmo fundo do footer */
     .cta {
-      background: #000000; /* mesmo do footer */
+      background: #000000;
       color: #ffffff;
       padding: 22px;
       border-radius: 12px;
@@ -131,7 +124,6 @@
   <br>
 
   <style>
-    /* ===== ESTILOS DA AVALIAÇÃO ===== */
     .avaliacao {
       text-align: right;
       background: #fff;
@@ -244,7 +236,6 @@
     <a href="cadastro.html">CADASTRE - SE</a>
   </div>
 
-  <!-- ====== ÁREA DE AVALIAÇÃO ====== -->
   <section class="avaliacao">
     <h3>Deixe sua avaliação ⭐</h3>
     <p>Sua opinião é muito importante para nós! Avalie o site da <b>ALL WEAR</b> e nos ajude a melhorar sua experiência.</p>
@@ -274,7 +265,6 @@
   </section>
 
   <script>
-    // ======== SCRIPT DA AVALIAÇÃO COM COMENTÁRIOS E DATA ========
     const stars = document.querySelectorAll('.star');
     const ratingText = document.getElementById('rating-text');
     const submitButton = document.getElementById('submit');
