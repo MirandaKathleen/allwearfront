@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desfiles de Moda</title>
+
+<header class="main-header">
+  <div class="logo">ALL WEAR</div>
+  <nav class="nav-links">
+    <a href="index.html">Início</a>
+  </nav>
+</header>
+<br><br><br><br>
+
     <style>
         /* --- ESTILOS CSS --- */
 
@@ -13,6 +22,39 @@
             padding: 20px;
             background-color: #eee5d9;
         }
+
+                .main-header {
+  width: 100%;
+  padding: 20px 40px;
+  background-color: #000;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ccc;
+}
 
         .container {
             max-width: 1200px;
@@ -57,7 +99,7 @@
 
         .card img {
             width: 100%;
-            height: 630px;
+            height: 550px;
             object-fit: cover;
             display: block;
             margin-bottom: 10px;

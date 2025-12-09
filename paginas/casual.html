@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Escolher Imagens</title>
+  <link rel="stylesheet" href="../styles/escolhas.css">
+</head>
+
+<body>
+  <header class="main-header">
+    <div class="logo">ALL WEAR</div>
+    <nav class="nav-links">
+      <a href="escolham.html">Início</a>
+    </nav>
+  </header>
+  <br><br><br><br><br>
+  <h1>Escolha suas imagens favoritas</h1>
+  <div id="roupas"></div>
+
+  <button id="goToSlider">Ver no carrosel</button>
+  <script src="../scripts/escolha.js"></script>
+  <script>
+    //Obter o filtro da URL do campo escolha
+    const urlParams = new URLSearchParams(window.location.search);
+    const escolha = urlParams.get('escolha');
+    exibirRoupas(escolha);
+  </script>
+</body>
+
+</html>
