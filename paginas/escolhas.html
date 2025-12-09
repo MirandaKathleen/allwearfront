@@ -24,7 +24,8 @@
     //Obter o filtro da URL do campo escolha
     const urlParams = new URLSearchParams(window.location.search);
     const escolha = urlParams.get('escolha');
-    exibirRoupas(escolha);
+    const nome = urlParams.get('nome');
+    exibirRoupas(escolha, nome);
   </script>
 </body>
 

@@ -1,5 +1,6 @@
 const cards = document.getElementById('roupas');
 var roupas = [];
+var escolhidas = [];
 
 async function carregarRoupas() {
   try {
@@ -11,10 +12,10 @@ async function carregarRoupas() {
   }
 }
 
-async function exibirRoupas(filtro) {
+async function exibirRoupas(filtro, nome) {
   await carregarRoupas();
   cards.innerHTML = '';
-  const roupasFiltradas = roupas.filter(roupa => roupa.descricao.toLowerCase() === filtro.toLowerCase());
+  const roupasFiltradas = roupas.filter(roupa => roupa.descricao.toLowerCase() === filtro.toLowerCase() && roupa.nome.toLowerCase() === nome.toLowerCase());
   roupasFiltradas.forEach(roupa => {
     const img = document.createElement('img');
     img.src = roupa.imagemUrl;
@@ -22,4 +23,4 @@ async function exibirRoupas(filtro) {
     img.classList.add('image-option');
     cards.appendChild(img);
   });
-}
+} 
